@@ -1,0 +1,72 @@
+/* Style for text elements */
+.text, .text1, .text2, .text3, .text-left {
+    white-space: normal; /* Allows text to wrap at spaces */
+    overflow-wrap: anywhere; /* Enables word-breaking at any point if necessary */
+    line-height: 1.6; /* Sets a comfortable line height for readability */
+    color: aqua; /* Defines the default text color */
+}
+
+/* Adds interactive behavior to text spans */
+.text span {
+    display: inline-block; /* Treats each span as an inline block for better control */
+    cursor: pointer; /* Changes the cursor to indicate interactivity */
+}
+
+/* Class for active text animation */
+.activeZ {
+    animation: smoke 2s linear forwards; /* Applies a "smoke" animation */
+}
+
+/* Animation for "smoke" effect */
+@keyframes smoke {
+    30% {
+        color: chartreuse; /* Changes text color to bright green */
+    }
+    50% {
+        color: red; /* Changes text color to red */
+    }
+    100% {
+        opacity: 0; /* Fades out the text */
+        filter: blur(20px); /* Applies a blur effect */
+        transform: translateX(300px) translateY(-300px) rotate(1440deg) scale(4); /* Adds rotation, scaling, and movement */
+    }
+}
+
+/* Black hole visual effect */
+.black-hole {
+    position: absolute; /* Position relative to the container */
+    width: 50px; /* Sets the width */
+    height: 50px; /* Sets the height */
+    border-radius: 50%; /* Creates a circular shape */
+    background: radial-gradient(circle, black, transparent); /* Simulates a gradient black hole */
+    pointer-events: none; /* Ensures it doesn't interfere with interactions */
+    transform: translate(-50%, -50%); /* Centers the black hole at its coordinates */
+    mix-blend-mode: multiply; /* Creates a blending effect with background elements */
+    display: none; /* Initially hidden */
+}
+
+/* Smoke effect around the black hole */
+.smoke {
+    position: absolute; /* Positioned around the black hole */
+    width: 10px; /* Small circular smoke particle */
+    height: 10px;
+    background: white; /* White smoke color */
+    border-radius: 50%; /* Circular shape */
+    animation: swirl 3s linear infinite; /* Continuous swirling animation */
+    pointer-events: none; /* Non-interactive */
+}
+
+/* Swirling smoke animation */
+@keyframes swirl {
+    0% {
+        transform: rotate(0deg) translate(20px) scale(0.8); /* Initial position and size */
+        opacity: 1; /* Fully visible */
+    }
+    50% {
+        opacity: 0.5; /* Partially faded */
+    }
+    100% {
+        transform: rotate(360deg) translate(60px) scale(1.2); /* Ends with rotation and larger scale */
+        opacity: 0; /* Fully fades out */
+    }
+}
