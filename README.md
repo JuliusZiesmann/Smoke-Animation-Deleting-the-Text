@@ -1,5 +1,3 @@
-Dynamic Black Hole and Smoke Animation https://julius.ziesmann.tech/  Text: About me
-
 
 This project demonstrates an interactive animation effect using CSS and JavaScript. It features a "black hole" visual that follows the user's cursor, emitting swirling smoke particles while interacting with text elements.
 
